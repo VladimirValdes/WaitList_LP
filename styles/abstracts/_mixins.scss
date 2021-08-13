@@ -1,0 +1,25 @@
+
+
+@mixin  pancke-stack {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    max-width: 1124px;
+    margin: 0 auto;
+    background-color: $c-bk;
+}
+
+@mixin  base-button($bk, $color, $border-color) {
+
+    min-width: 100px;
+    padding: 15px 20px;
+
+    appearance: none;
+    border: 2px solid $border-color;
+    border-radius: 25px;
+    background-color: $bk;
+    color: $color;
+    font-family: $font2-name;
+    font-size: 1.5rem;
+    font-weight: 600;
+}

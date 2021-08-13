@@ -1,0 +1,29 @@
+
+@import 'abstracts/palette';
+@import 'abstracts/mixins';
+
+
+html {
+
+    font-family: $font-primary;
+    font-size: 62.5%;
+
+}
+
+body {
+    @include pancke-stack();
+}
+
+header {
+    border: $border;
+}
+
+main {
+    border: $border;
+
+}
+
+footer {
+    border: $border;
+
+}
