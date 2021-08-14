@@ -2,6 +2,8 @@
 @import 'abstracts/palette';
 @import 'abstracts/mixins';
 
+@import 'responsive/main-responsive';
+
 
 html {
 
@@ -15,11 +17,96 @@ body {
 }
 
 header {
-    border: $border;
+
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1.25rem 1.25rem;
+    border-bottom: 1px solid #E2E8F0;
+
+    .navbar {
+        margin-left: auto;
+
+        .menu {
+            // display: flex;
+            // display: block;
+            position: absolute;
+            top: 5.5rem;
+            left: 0;
+            right: 0;
+
+            display: flex;
+            flex-direction: column;
+            padding-left: 0;
+            opacity: 0;
+            visibility: hidden;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+            transform: translateX(-100%);
+            transition: 0.3s;
+
+            &--active {
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(0);
+                transition: 0.3s ease-out;
+            }
+
+            &__item {
+                padding: 1.5rem 0;
+                border-bottom: 1px solid $c-primary;
+
+                &--btn {
+                    margin: 1.25rem 0 1.25rem 1.25rem;
+                    border: none;
+                }
+               
+            }
+
+            &__link {
+                padding-left: 1.25rem;
+                font-size: 1.6rem;
+                font-weight: 400;
+                color: $c-links;
+
+                &--btn {
+                    padding: 2rem;
+                    font-size: 1.5rem;
+                    font-weight: $w-md;
+                    color: $c-btnF;
+                    background-color: $c-primary;
+                    border: none;
+                    border-radius: 5px;
+                    letter-spacing: 1px;
+
+                    cursor: pointer
+                }
+
+                &:hover {
+                    color: #482ff7;
+                }
+            }
+        }
+
+        .icon-menu {
+            
+            display: flex;
+            flex-direction: column;
+            width: 40px;
+
+            cursor: pointer;
+
+            &__bar {
+                 @include hamburger-icon(35px, 3px, #333);
+            }
+        }
+    }
 }
 
 main {
-    border: $border;
+    // border: $border;
 
 }
 
@@ -27,3 +114,5 @@ footer {
     border: $border;
 
 }
+
+@include desktop( 62em );

@@ -13,15 +13,123 @@ body {
 }
 
 header {
-  border: 1px solid red;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 1.25rem 1.25rem;
+  border-bottom: 1px solid #E2E8F0;
 }
-
-main {
-  border: 1px solid red;
+header .navbar {
+  margin-left: auto;
+}
+header .navbar .menu {
+  position: absolute;
+  top: 5.5rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  opacity: 0;
+  visibility: hidden;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+  transform: translateX(-100%);
+  transition: 0.3s;
+}
+header .navbar .menu--active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  transition: 0.3s ease-out;
+}
+header .navbar .menu__item {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #372865;
+}
+header .navbar .menu__item--btn {
+  margin: 1.25rem 0 1.25rem 1.25rem;
+  border: none;
+}
+header .navbar .menu__link {
+  padding-left: 1.25rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #606061;
+}
+header .navbar .menu__link--btn {
+  padding: 2rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #ffffff;
+  background-color: #372865;
+  border: none;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+header .navbar .menu__link:hover {
+  color: #482ff7;
+}
+header .navbar .icon-menu {
+  display: flex;
+  flex-direction: column;
+  width: 40px;
+  cursor: pointer;
+}
+header .navbar .icon-menu__bar {
+  position: relative;
+  width: 35px;
+  height: 3px;
+  border-radius: 1.5px;
+  background-color: #333;
+}
+header .navbar .icon-menu__bar:before, header .navbar .icon-menu__bar:after {
+  content: "";
+  position: absolute;
+  top: -0.9em;
+  display: block;
+  width: 35px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 1.5px;
+  transition: transform 0.2s;
+}
+header .navbar .icon-menu__bar:after {
+  top: 0.9em;
 }
 
 footer {
   border: 1px solid red;
+}
+
+@media (min-width: 62em) {
+  header {
+    padding-top: 0;
+    padding-bottom: 0;
+    border: none;
+  }
+  header .navbar .menu {
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 0;
+    opacity: 1;
+    visibility: visible;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: transparent;
+    transform: translateX(0);
+  }
+  header .navbar .menu__item {
+    border: none;
+    padding-bottom: 0;
+  }
+  header .navbar .icon-menu {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
