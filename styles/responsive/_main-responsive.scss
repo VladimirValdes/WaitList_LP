@@ -2,6 +2,39 @@
     
     @media (min-width: $breakpoint-desktop) {
     
+        header {
+            padding-left: 3.5rem;
+            padding-right: 3.5rem;
+        }
+
+        main {
+           
+
+            .info-section {
+
+                &__title {
+                    
+                    font-size: 5.5rem;
+                    margin-bottom: 0;
+                }
+               
+                .form {
+              
+
+                    &__input {
+                        flex: 0 0 385px;
+                    }
+    
+                    &__btn {
+                        flex: 0 0 auto;
+                    }
+                }
+            }
+
+            
+        }
+
+        
     }
 }
 
@@ -40,6 +73,50 @@
                     display: none;
                 }
             }
+        }
+
+
+        main {
+            grid-template-rows: auto;
+            grid-template-areas: 
+            "info-section info-section img-section img-section";
+            justify-items: flex-start;
+            column-gap: 0.5rem;
+
+            padding-top: 3.5rem;
+            padding-bottom: 0;
+
+            .img-section {
+                align-self: flex-end;
+                height: 400px;
+
+            }
+
+            .info-section {
+
+                max-width: 700px;
+                align-items: flex-start;
+
+                
+
+                &__title {
+                    margin-top: 0;
+                    font-size: 4.5rem;
+                    text-align: start;
+                }
+
+                &__desc, &__adv  {
+                    text-align: start;
+                }
+
+                .form {
+                    justify-content: flex-start;
+                }
+            }
+        }
+
+        footer {
+            margin: 0;
         }
     }
 }

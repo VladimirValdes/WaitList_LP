@@ -1,4 +1,4 @@
-
+// @use "sass:math";
 
 @mixin  pancke-stack {
     display: grid;
@@ -11,6 +11,7 @@
 
 
 @mixin hamburger-icon($width, $height, $bg) {
+    
     @content;
     
     position: relative;
@@ -19,6 +20,8 @@
     height: $height;
     
     border-radius: $height / 2;
+    // border-radius: math.div($height, 2);
+
     background-color: $bg;
 
     &:before, &:after {
