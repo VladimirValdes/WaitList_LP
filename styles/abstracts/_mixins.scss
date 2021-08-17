@@ -1,4 +1,8 @@
-// @use "sass:math";
+
+
+/*========================
+        LAYOUTS
+========================*/
 
 @mixin  pancke-stack {
     display: grid;
@@ -10,6 +14,65 @@
 }
 
 
+@mixin  split-screen($area1, $area2, $j-items) {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        $area2
+        $area1;
+    justify-items: $j-items;
+}
+
+
+@mixin  split-screen-desk($area1, $area2, $j-items) {
+    grid-template-rows: auto;
+    grid-template-areas: 
+    $area1 $area1 $area2 $area2;
+    justify-items: $j-items;
+}
+
+
+
+
+/*========================
+        COMPONENTS
+========================*/
+
+
+
+// ======MENU🍔====
+
+@mixin base-menu (){
+    position: absolute;
+    top: 5.5rem;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    opacity: 0;
+    visibility: hidden;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    transform: translateX(-100%);
+    transition: 0.3s;
+}
+
+@mixin  base-menu-responsive() {
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 0;
+    opacity: 1;
+    visibility: visible;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: transparent;
+    transform: translateX(0);
+}
+
 @mixin hamburger-icon($width, $height, $bg) {
     
     @content;
@@ -20,7 +83,6 @@
     height: $height;
     
     border-radius: $height / 2;
-    // border-radius: math.div($height, 2);
 
     background-color: $bg;
 
@@ -31,7 +93,7 @@
         position: absolute;
         top: -.9em;
 
-        display: block; // Por que before y after son elementos de linea
+        display: block; 
         width: $width;
         height: $height;
 
@@ -52,11 +114,11 @@
     
     @content;
    
-    height: 0;  // Para desaparecer la barra del medio
+    height: 0;  
 
     &:before, &:after {
 
-        top: 0; // Para que ambas rayas se coloquen a la misma altura
+        top: 0; 
         transform: rotate(-45deg);
 
     }
@@ -67,17 +129,47 @@
 }
 
 
-@mixin  base-button($bk, $color, $border-color) {
 
-    min-width: 100px;
-    padding: 15px 20px;
+//======FORMS====//
 
-    appearance: none;
-    border: 2px solid $border-color;
-    border-radius: 25px;
-    background-color: $bk;
-    color: $color;
-    font-family: $font2-name;
+@mixin  base-button($bk, $color, $w) {
+
+    padding: 2rem;
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: $w;
+    color: $color;
+    background-color: $bk;
+    border: none;
+    border-radius: 5px;
+    letter-spacing: 1px;
+
+    cursor: pointer
+}
+
+@mixin  base-input() {
+    @content;
+
+    padding: 2rem;
+    border: 1px solid #E2E8F0;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: -36px 2px 79px -18px rgba(0,0,0,0.1);
+
+    &:placeholder-shown {
+        font-weight: $w-xbg;
+        font-size: 1.5rem;
+        color: #5D5D5E;
+    }
+}
+
+
+
+//======TEXT====//
+
+@mixin  base-text($fs, $t-lgn, $fw, $lh, $c) {
+    font-size: $fs;
+    text-align: $t-lgn;
+    font-weight: $fw;
+    line-height: $lh;
+    color: $c;
 }

@@ -1,3 +1,9 @@
+/*========================
+        LAYOUTS
+========================*/
+/*========================
+        COMPONENTS
+========================*/
 html {
   font-family: "Nunito Sans", sans-serif;
   font-size: 62.5%;
@@ -62,7 +68,7 @@ header .navbar .menu__link {
 header .navbar .menu__link--btn {
   padding: 2rem;
   font-size: 1.5rem;
-  font-weight: 300;
+  font-weight: 800;
   color: #ffffff;
   background-color: #372865;
   border: none;
@@ -100,6 +106,16 @@ header .navbar .icon-menu__bar:before, header .navbar .icon-menu__bar:after {
 header .navbar .icon-menu__bar:after {
   top: 0.9em;
 }
+header .navbar .icon-menu__bar--close {
+  height: 0;
+}
+header .navbar .icon-menu__bar--close:before, header .navbar .icon-menu__bar--close:after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+header .navbar .icon-menu__bar--close:after {
+  transform: rotate(45deg);
+}
 
 main {
   display: grid;
@@ -131,10 +147,11 @@ main .info-section {
   align-items: center;
 }
 main .info-section__title {
-  color: #372865;
-  font-weight: 800;
   font-size: 3.5rem;
   text-align: center;
+  font-weight: 800;
+  line-height: normal;
+  color: #372865;
 }
 main .info-section__adv {
   order: -1;
@@ -167,7 +184,7 @@ main .info-section .form {
 }
 main .info-section .form__input {
   flex: 1 0 auto;
-  height: 65px;
+  height: 55px;
   margin-top: 1rem;
   padding: 2rem;
   border: 1px solid #E2E8F0;
@@ -182,7 +199,7 @@ main .info-section .form__input:placeholder-shown {
 }
 main .info-section .form__btn {
   flex: 1 0 150px;
-  height: 65px;
+  height: 55px;
   padding: 2rem;
   font-size: 1.5rem;
   font-weight: 800;
@@ -202,8 +219,11 @@ footer {
 }
 footer .footer-section p {
   font-size: 1.7rem;
-  color: #545454;
+  text-align: start;
   font-weight: 800;
+  line-height: normal;
+  color: #545454;
+  margin-top: 0;
 }
 
 @media (min-width: 43em) {
@@ -243,7 +263,11 @@ footer .footer-section p {
   }
   header .navbar .menu__item {
     border: none;
-    padding-bottom: 0;
+    padding: 0;
+  }
+  header .navbar .menu__link--btn {
+    display: block;
+    height: 55px;
   }
   header .navbar .icon-menu {
     display: none;
@@ -254,12 +278,11 @@ footer .footer-section p {
     grid-template-areas: "info-section info-section img-section img-section";
     justify-items: flex-start;
     column-gap: 0.5rem;
-    padding-top: 3.5rem;
     padding-bottom: 0;
   }
   main .img-section {
-    align-self: flex-end;
-    height: 400px;
+    align-self: center;
+    height: 350px;
   }
   main .info-section {
     max-width: 700px;
@@ -272,9 +295,13 @@ footer .footer-section p {
   }
   main .info-section__desc, main .info-section__adv {
     text-align: start;
+    font-size: 1.6rem;
   }
   main .info-section .form {
     justify-content: flex-start;
+  }
+  main .info-section .form__input {
+    margin-top: 0;
   }
 
   footer {

@@ -3,29 +3,21 @@
 
 Codewell's aim is to provide you with real-world design templates that you can use to practice your HTML and CSS projects. 
 
-Free or paid, all templates are high quality and will make great portfolio pieces.
+# 💠Commune Waitlist Page
 
-### I've completed the challenge, now what?
+Welcome! 👋 thanks for checking out this front-end coding challenge by [codewell](https://www.codewell.cc/).
 
-We recommend using one of these two websites to deploy your projects
+For this challenge I used :
 
-- [GitHub Pages](https://pages.github.com/)
-- [Netlify](https://www.netlify.com/)
+- HTML - SCSS
 
-They're super easy to setup and you should have your website up and running in no time, just follow their instructions.
+- BEM methodology - Flexbox - Grid
+
+- JavaScript
 
 
-### Submit your solution to Codewell
+## 🌐 You can check the project [here]() 👀
+## ✔ You can find more challenges [here](https://www.codewell.cc/challenges) 👀
 
-Visit the relevant challenge on [Codewell](https://codewell.cc) and click on 'Submit Solution' right under the challenge.
-Enter all the title, Github repo URL, Live URL (Netlify or GH Pages), and tell the community what challenges you've faced.
-
-### Join our community on Slack
-
-If you want more real-time communication, you can visit our community on [Slack](https://join.slack.com/t/codewell-hq/shared_invite/zt-ni8c9g8h-gNYWrmqQ3Uh37dcLg9~LMQ). 
-
-### Fonts Used
-
-https://fonts.google.com/specimen/Nunito+Sans
 
 

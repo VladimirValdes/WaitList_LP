@@ -22,7 +22,6 @@ header {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    // padding: 1.25rem 1.25rem;
     padding: $pd $pd;
 
     border-bottom: 1px solid #E2E8F0;
@@ -32,21 +31,7 @@ header {
 
         .menu {
             
-            position: absolute;
-            top: 5.5rem;
-            left: 0;
-            right: 0;
-
-            display: flex;
-            flex-direction: column;
-            padding-left: 0;
-            opacity: 0;
-            visibility: hidden;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-            transform: translateX(-100%);
-            transition: 0.3s;
+            @include base-menu(); 
 
             &--active {
                 opacity: 1;
@@ -73,16 +58,9 @@ header {
                 color: $c-links;
 
                 &--btn {
-                    padding: 2rem;
-                    font-size: 1.5rem;
-                    font-weight: $w-md;
-                    color: $c-btnF;
-                    background-color: $c-primary;
-                    border: none;
-                    border-radius: 5px;
-                    letter-spacing: 1px;
+                    
+                    @include base-button($c-primary, $c-btnF,  $w-xbg);
 
-                    cursor: pointer
                 }
 
                 &:hover {
@@ -101,6 +79,10 @@ header {
 
             &__bar {
                  @include hamburger-icon(35px, 3px, #333);
+
+                 &--close {
+                     @include close-icon();
+                 }
             }
         }
     }
@@ -108,13 +90,7 @@ header {
 
 main {
 
-    display: grid;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-        "img-section"
-        "info-section";
-    justify-items: center;
-    
+    @include split-screen("info-section", "img-section", center);
     row-gap: 2.5rem;
     padding: $pd;
 
@@ -144,10 +120,9 @@ main {
         align-items: center;
 
         &__title {
-            color: $c-primary;
-            font-weight: $w-xbg;
-            font-size: 3.5rem;
-            text-align: center;
+           
+            @include base-text(3.5rem, center, $w-xbg, normal, $c-primary);
+
         }
 
         &__adv {
@@ -159,6 +134,8 @@ main {
             color: #ccc1e6;
             border-radius: 25px;
 
+            
+
             .link__adv {
                 font-weight: $w-xbg;
                 text-decoration: underline;
@@ -168,12 +145,7 @@ main {
 
         &__desc {
             width: 95%;
-            font-size: 1.7rem;
-            text-align: center;
-            font-weight: $w-bg;
-            line-height: 2.5rem;
-            color: $c-secondary;
-
+            @include base-text(1.7rem, center, $w-bg, 2.5rem, $c-secondary);
         }
 
         .form {
@@ -187,39 +159,22 @@ main {
 
             &__input {
                 flex: 1 0 auto;
-                height: 65px;
+                height: 55px;
                 margin-top: 1rem;
-                padding: 2rem;
-                border: 1px solid #E2E8F0;
-                outline: none;
-                border-radius: 5px;
-                box-shadow: -36px 2px 79px -18px rgba(0,0,0,0.1);
-
-                &:placeholder-shown {
-                    font-weight: $w-xbg;
-                    font-size: 1.5rem;
-                    color: #5D5D5E;
-                }
+                @include base-input();
+              
             }
 
             &__btn {
                 flex: 1 0 150px;
-                height: 65px;
-                padding: 2rem;
-                font-size: 1.5rem;
-                font-weight: $w-xbg;
-                color: $c-btnF;
-                background-color: $c-primary;
-                border: none;
-                border-radius: 5px;
-                letter-spacing: 1px;
-
-                cursor: pointer
+                height: 55px;
+                @include base-button($c-primary, $c-btnF,  $w-xbg);
             }
         }
     }
 
 }
+
 
 footer {
     width: 100%;
@@ -229,14 +184,10 @@ footer {
 
     .footer-section {
         p {
-            font-size: 1.7rem;
-            color: #545454;
-            font-weight: $w-xbg;
+            @include base-text(1.7rem, start, $w-xbg, normal, #545454);
+            margin-top: 0;
         }
     }
-   
-
-
 }
 
 
