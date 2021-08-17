@@ -12,7 +12,7 @@ For this challenge I used :
 - JavaScript
 
 
-## 🌐 You can check the project [here](https://vladimirvaldes.github.io/WaitList_LP/index.html) 👀
+## 🌐 You can check the project [here](https://vladimirvaldes.github.io/WaitList_LP/) 👀
 ## ✔ You can find more challenges [here](https://www.codewell.cc/challenges) 👀
 
 
